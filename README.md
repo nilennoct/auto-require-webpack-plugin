@@ -25,6 +25,20 @@ typeof define === 'function' && define.amd && require(['common/view']);
 ### new AutoRequirePlugin(options)
 
 ```js
+/* Use constructor options directly */
+var options = true;
+
+module.exports = {
+  plugins: [
+    new AutoRequirePlugin(options)
+  ]
+};
+```
+
+Or
+
+```js
+/* Use `output.autoRequire` to set options */
 var options = true;
 
 module.exports = {
@@ -32,12 +46,12 @@ module.exports = {
     autoRequire: options
   },
   plugins: [
-    new AutoRequirePlugin(options)
+    new AutoRequirePlugin()
   ]
 };
 ```
 
-There are two ways to configure AutoRequirePlugin: constructor's parameter or `output.autoRequire`. The latter will override constructor's parameter.
+There are two ways to configure AutoRequirePlugin: constructor's parameter or `output.autoRequire`. **The latter will override constructor's parameter.**
 
 ## Examples
 
